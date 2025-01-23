@@ -8,6 +8,20 @@
       "when": 1737277572923,
       "tag": "0000_blue_starfox",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1737579018250,
+      "tag": "0001_flowery_justice",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737587569995,
+      "tag": "0002_ordinary_silvermane",
+      "breakpoints": true
     }
   ]
 }

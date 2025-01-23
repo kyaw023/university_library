@@ -23,22 +23,23 @@ const layout = async ({ children }: { children: ReactNode }) => {
       .where(eq(users.id, session?.user?.id))
       .limit(1);
 
-    if (user[0]?.lastActivityData === new Date().toISOString().slice(0, 10))
+    if (user[0]?.lastActivityDate === new Date().toISOString().slice(0, 10))
       return;
 
     await db
       .update(users)
       .set({
-        lastActivityData: new Date().toISOString().slice(0, 10),
+        lastActivityDate: new Date().toISOString().slice(0, 10),
       })
       .where(eq(users.id, session?.user?.id));
   });
 
   return (
-    <main className="max-w-7xl mx-auto px-4 lg:px-0">
-      <div className="flex flex-col min-h-screen ">
+    <main className="root-container">
+      <div className="mx-auto max-w-7xl">
         <Header session={session} />
-        <div>{children}</div>
+
+        <div className="mt-20 pb-20">{children}</div>
       </div>
     </main>
   );
